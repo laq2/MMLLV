@@ -1,0 +1,127 @@
+body {
+    font-family: 'tough';
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #f4f4f4;
+    background-image: url("../src/fondo.png");
+    background-position: center;
+    
+  }
+h1{
+  text-align: center;
+}
+table{
+  padding-left: 10px;
+    box-sizing: border-box;
+    display: table;
+    
+  }
+  td:hover{
+    transform: scale(1.1);
+    overflow: hidden;
+    transition: 0.5s;
+    
+    
+  }
+  
+
+  .logo{
+    position: relative;
+    width: 700px;
+    padding-left: 999px;
+  }
+
+  #TITULO{
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+    font-family: 'tough';
+  }
+
+  #c2{
+    font-family:'supercharge';
+    text-align: left;
+    padding-left: 20px;
+    font-size: 15px;
+    
+  }
+
+  #TODO{
+    
+    position: absolute;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 100px;
+
+  }
+
+  .cuadro {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    border-radius: 3%;
+    text-align: right;
+    padding-right: 10px;
+    border: solid 2px rgb(255, 187, 0);
+    background-color: bisque;
+    margin-left: 35%;
+    font-size: 15px;
+
+}
+
+
+
+  .cuadro p{
+    font-family:'supercharge';
+    padding-left: 20px;
+}
+
+  .imagecontainer img{
+    border-radius: 10%;
+    object-fit: cover;
+    overflow: hidden;
+    transition: 0.5s;
+    width: 250px;
+    height: 250px;
+}
+
+.imagecontainer{
+ 
+    position: absolute;
+    text-align: left;
+    font-size: 10px;
+    padding-top: 97px;
+    padding-right: 1280px;
+    padding-left: 100px;
+}
+
+.hidden{
+    display: none;
+}
+
+#text {
+    margin-top: 5px;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+#text.show {
+    display: block;
+    opacity: 1;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 80px;
+  background-color: bisque;
+  text-decoration: none;
+
+}
+
+a{
+  text-decoration: none;
+}
