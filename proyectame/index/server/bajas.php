@@ -12,7 +12,7 @@
 
 include("../modelo/usuario.php");
 
-$use = $_POST['userName'];
+$nom = $_POST['nombre'];
 
 $result = deleteUser($use);
 

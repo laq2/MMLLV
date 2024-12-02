@@ -1,16 +1,11 @@
 <?php
 
-function insertar($use, $cla, $ape, $nom, $fe, $foto, $fotoTamanio)
+function insertar($nom, $ape, $cor, $mas, $eda, $des)
 {
-    if ($fotoTamanio > 0) {
-        $fp = fopen($foto, "rb");
-        $contenido = fread($fp, $fotoTamanio);
-        $contenido = addslashes($contenido);
-        fclose($fp);
 
         $Conexion = include("conexion.php");
 
-        $cadena = "INSERT INTO persona(apellido, nombre, fecha,foto,usuario,clave) VALUES ('$ape','$nom','$fe','$contenido','$use','$cla')";
+        $cadena = "INSERT INTO persona(apellido, nombre, fecha,foto,usuario,clave) VALUES ('$nom','$ape','$cor','$mas','$eda','$des')";
 
         try {
             $resultado = mysqli_query($Conexion, $cadena);
@@ -23,9 +18,7 @@ function insertar($use, $cla, $ape, $nom, $fe, $foto, $fotoTamanio)
         }
 
 
-    } else {
-        return false;
-    }
+   
 }
 
 function getHorario($idPro)
@@ -99,17 +92,12 @@ function deleteUser($userName)
     return $resultado;
 }
 
-function modificar($use, $cla, $ape, $nom, $fe, $foto, $fotoTamanio)
+function modificar($nom, $ape, $cor, $mas, $eda, $des)
 {
-    if ($fotoTamanio > 0) {
-        $fp = fopen($foto, "rb");
-        $contenido = fread($fp, $fotoTamanio);
-        $contenido = addslashes($contenido);
-        fclose($fp);
-
+   
         $Conexion = include("conexion.php");
 
-        $cadena = "UPDATE  persona SET apellido = '$ape', nombre = '$nom', fecha = '$fe', foto = '$contenido', clave = '$cla' WHERE usuario = '$use'";
+        $cadena = "UPDATE  persona SET  nombre = '$nom', apellido =  '$ape', correo = '$cor', mascota = '$mas', edad = '$eda', descripcion = '$des' WHERE usuario = '$use'";
 
         try {
             $resultado = mysqli_query($Conexion, $cadena);
@@ -119,21 +107,7 @@ function modificar($use, $cla, $ape, $nom, $fe, $foto, $fotoTamanio)
         } catch (Exception $e) {
             return substr($e, 22, 41);
         }
-    } else {
-        $Conexion = include("conexion.php");
-
-        $cadena = "UPDATE  persona SET apellido = '$ape', nombre = '$nom', fecha = '$fe', clave = '$cla' WHERE usuario = '$use'";
-
-        try {
-            $resultado = mysqli_query($Conexion, $cadena);
-            if ($resultado) {
-                return true;
-            }
-        } catch (Exception $e) {
-            return substr($e, 22, 41);
-        }
-    }
-}
+    } 
 
 function listar()
 {

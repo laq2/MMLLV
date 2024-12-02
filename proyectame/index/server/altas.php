@@ -12,15 +12,15 @@
 
 include("../modelo/usuario.php");
 
-$use = $_POST['usuario'];
-$cla = $_POST['clave'];
-$ape = $_POST['apellido'];
 $nom = $_POST['nombre'];
-$fe = $_POST['fecha'];
-$foto = $_FILES["foto"]["tmp_name"];
-$fotoTamanio = $_FILES["foto"]["size"];
+$ape = $_POST['apellido'];
+$cor = $_POST['correo'];
+$mas = $_POST['mascota'];
+$eda = $_POST['edad'];
+$des = $_POST['descripcion'];
 
-$result = insertar($use, $cla, $ape, $nom, $fe, $foto, $fotoTamanio);
+
+$result = insertar ($nom, $ape, $cor, $mas, $eda, $des);
 
 if (strlen($result) > 5) {
     echo '<div class="Rcontainer">
