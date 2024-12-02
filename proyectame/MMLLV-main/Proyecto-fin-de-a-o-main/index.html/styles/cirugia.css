@@ -1,0 +1,59 @@
+/* Estilos generales para todas las páginas */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../src/fondo.png");
+    
+}
+
+.cirugia{
+    background-image: url("../src/fondo.png");
+}
+h1 {
+    text-align: center; /* Centra el texto del encabezado */
+    color: #333; /* Color del texto */
+    margin: 2px 0; /* Espacio arriba y abajo del encabezado */
+}
+
+/* Estilos específicos para la Página de Cirugía */
+.cirugia .image-container {
+    display: flex; /* Usa Flexbox para alinear imágenes */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en múltiples líneas si es necesario */
+    gap: 190px; /* Espacio entre las imágenes */
+    margin: 60px; /* Espacio alrededor del contenedor de imágenes */
+}
+
+.cirugia .image-container img {
+    flex: 1 1 calc(25% - 10px); /* Permite que las imágenes se ajusten en tamaño flexible, con 4 imágenes por fila */
+    max-width: 22%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen se recorte para llenar el contenedor sin distorsión */
+}
+
+/* Ajuste de altura en pantallas más pequeñas */
+.cirugia .image-container img.custom-size {
+    height: 390px; /* Ajusta la altura de las imágenes si se utiliza la clase .custom-size */
+}
+
+/* Asegura que la imagen siempre se ajuste bien en el contenedor */
+@media (max-width: 300px) {
+    .cirugia .image-container img {
+        flex: 1 1 calc(50% - 10px); /* Dos imágenes por fila en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .cirugia .image-container img {
+        flex: 1 1 calc(50% - 10px); /* Una imagen por fila en pantallas muy pequeñas */
+    }
+}
+.cirugia .image-caption {
+    margin-top: 5px; /* Espacio entre la imagen y el texto */
+    color: #6e6767; /* Color del texto */
+    font-size: 14px; /* Tamaño del texto */
+    word-wrap: break-word; /* Permite que el texto se rompa y ajuste en la línea siguiente si es demasiado largo */
+    overflow-wrap: break-word; /* Alternativa para asegurar el ajuste del texto */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
